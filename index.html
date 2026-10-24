@@ -37,7 +37,7 @@ input[type=search]{flex:1 1 220px;background:var(--surface);border:1px solid var
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;padding-bottom:64px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;display:flex;flex-direction:column}
 .card:hover{border-color:var(--yellow)}
-.cover{aspect-ratio:3/4;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px}
+.cover{aspect-ratio:3/4;background-size:cover;background-position:center;display:flex;flex-wrap:wrap;align-content:flex-end;gap:6px;padding:12px}
 .plat{background:rgba(0,0,0,.65);padding:3px 10px;border-radius:4px;font-weight:600;font-size:.85rem}
 .info{padding:14px}
 .info h3{font-size:1.1rem;font-weight:800;font-stretch:90%}
@@ -59,7 +59,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .apoio .acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
 .apoio .btn{margin-top:0;border:0;font:700 1rem "Source Sans 3",sans-serif;cursor:pointer}
 .pix{color:var(--muted);font-size:.9rem;word-break:break-all}
+.versao{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.versao .btn{margin-top:0}
+.versao .meta{margin-top:10px}
+.inst{color:var(--muted);margin:8px 0 0;font-size:.95rem}
 .empty{padding:40px 0;color:var(--muted)}
+.card{transition:transform .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-4px)}
+.chip,.btn{transition:background-color .2s,border-color .2s,color .2s}
+
+dialog[open]{animation:abrir .22s ease}
+dialog[open]::backdrop{animation:esmaecer .22s ease}
+@keyframes abrir{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes esmaecer{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
 </style>
 </head>
 <body>
@@ -71,8 +87,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
 <section class="hero"><div class="wrap hero-in">
   <div class="hero-txt">
-    <h1>Jogos em português, do jeito que deveriam ser.</h1>
-    <p>Traduções e dublagens feitas sem fins lucrativos para PC e Consoles. Escolha o jogo, baixe o patch e siga o passo a passo.</p>
+    <h1>Lost in translation? Aqui não. O paraíso dos jogos em português.</h1>
+    <p>Traduções e dublagens feitas sem fins lucrativos para PC e Consoles.</p>
   </div>
   <img class="hero-logo" src="logo.png" alt="The Lost Paradise">
 </div></section>
@@ -89,8 +105,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 </main>
 
 <section class="apoio" id="apoio" hidden><div class="wrap">
-  <h2>Os patches são e continuarão gratuitos.</h2>
-  <p>Cada tradução e dublagem leva muitas horas de trabalho. Se este projeto te ajudou e você quiser contribuir, qualquer valor ajuda a manter tudo no ar. Contribuir é opcional e não muda nada no seu download.</p>
+  <h2>As localizações são e continuarão gratuitas.</h2>
+  <p>Cada tradução e dublagem nos consome muitas horas de trabalho. Se você curtiu e quiser contribuir, qualquer valor ajuda. Contribuir é opcional mas nos incentiva a continuar.</p>
   <div class="acoes" id="apoioAcoes"></div>
 </div></section>
 
@@ -106,39 +122,43 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 const APOIO = { patreon: "https://www.patreon.com/c/ZANIT767", pix: "eeeb60c3-a826-4929-9d05-b6df5163df42", apoia: "" };
 
 /* Plataformas */
-const PLATAFORMAS = ["PC","Playstation®1","Playstation®2","Playstation®3","Playstation Portable","Xbox","Xbox 360","GameCube","Wii"];
+const PLATAFORMAS = ["PC","Playstation®","Playstation®2","Playstation®3","Playstation Portable","Xbox","Xbox 360","GameCube","Wii"];
 
 /* Jogos */
 const JOGOS = [
   {
     titulo: "Need for Speed: Most Wanted",
-    plataforma: "PC",
-    formatos: ["Tradução", "Dublagem"],
-    versao: "", autor: "",
-    capa: "capas/5028031-need-for-speed-most-wanted-windows-front-cover.jpg",
-    descricao: "Tradução e dublagem em Português Brasileiro para a versão de PC.",
-    instalacao: "Baixe os arquivos, mova para a pasta do jogo e substitua.",
-    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
-  },
-  {
-    titulo: "Need for Speed: Most Wanted",
-    plataforma: "PS3",
-    formatos: ["Tradução"],
-    versao: "", autor: "",
-    capa: "",
-    descricao: "Tradução em Português Brasileiro para a versão de PS3, incluindo legendas dos vídeos.",
-    instalacao: "Instruções de instalação aqui.",
-    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
+    capa: "capas/nfsmw.jpg",
+    descricao: "Tradução e dublagem em Português Brasileiro.",
+    autor: "",
+    versoes: [
+      { plataforma: "PC", formatos: ["Tradução", "Dublagem"], versao: "0.1",
+        instalacao: "",
+        download: "#" },
+      { plataforma: "Playstation®2", formatos: ["Tradução", "Dublagem"], versao: "0.1",
+        instalacao: "",
+        download: "#" },
+      { plataforma: "GameCube", formatos: ["Tradução", "Dublagem"], versao: "0.1",
+        instalacao: "",
+        download: "#" },
+      { plataforma: "Xbox", formatos: ["Tradução", "Dublagem"], versao: "0.1",
+        instalacao: "",
+        download: "#" },
+      { plataforma: "Xbox 360", formatos: ["Tradução", "Dublagem"], versao: "0.1",
+        instalacao: "",
+        download: "#" }
+    ]
   },
   {
     titulo: "Need for Speed: Underground",
-    plataforma: "PS2",
-    formatos: ["Tradução"],
-    versao: "", autor: "",
-    capa: "",
-    descricao: "Tradução em português do Brasil para a versão de PS2.",
-    instalacao: "Aplique o patch na sua imagem do jogo.",
-    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
+    capa: "capas/nfsu1.jpg",
+    descricao: "Tradução e dublagem em Português Brasileiro.",
+    autor: "",
+    versoes: [
+      { plataforma: "Playstation®2", formatos: ["Tradução"], versao: "",
+        instalacao: "",
+        download: "#" }
+    ]
   }
 ];
 /* CLOSE */
@@ -170,7 +190,7 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
 function cor(t){let h=0;for(const c of t)h=(h*31+c.charCodeAt(0))%360;return h}
 function fundo(j){
-  const h=cor(j.titulo+j.plataforma);
+  const h=cor(j.titulo);
   const grad=`linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
   return j.capa ? `url('${j.capa}'), ${grad}` : grad;
 }
@@ -181,22 +201,26 @@ function chips(el, itens, chave){
   el.onclick = e => { const b=e.target.closest("button"); if(!b) return; estado[chave]=b.dataset.v; montar(); };
 }
 
+const plats = j => j.versoes.map(v=>v.plataforma);
+const fmts  = j => [...new Set(j.versoes.flatMap(v=>v.formatos))];
+const tagsF = fs => fs.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${esc(f)}</span>`).join("");
+
 function montar(){
   chips($("#chipsFormato"), ["Todos","Tradução","Dublagem"], "formato");
-  chips($("#chipsPlat"), ["Todas", ...new Set([...PLATAFORMAS, ...JOGOS.map(j=>j.plataforma)])], "plat");
+  chips($("#chipsPlat"), ["Todas", ...new Set([...PLATAFORMAS, ...JOGOS.flatMap(plats)])], "plat");
   const q = estado.busca.toLowerCase();
   const lista = JOGOS.map((j,i)=>({j,i})).filter(({j})=>
-    (estado.formato==="Todos"||j.formatos.includes(estado.formato)) &&
-    (estado.plat==="Todas"||j.plataforma===estado.plat) &&
-    j.titulo.toLowerCase().includes(q));
-  $("#contagem").textContent = lista.length+(lista.length===1?" projeto":" projetos");
+    j.titulo.toLowerCase().includes(q) &&
+    j.versoes.some(v=>(estado.formato==="Todos"||v.formatos.includes(estado.formato)) &&
+                      (estado.plat==="Todas"||v.plataforma===estado.plat)));
+  $("#contagem").textContent = lista.length+(lista.length===1?" projeto":" localizações");
   $("#grid").innerHTML = lista.length ? lista.map(({j,i})=>`
     <button class="card" data-i="${i}">
-      <div class="cover" style="background-image:${fundo(j)}"><span class="plat">${esc(j.plataforma)}</span></div>
+      <div class="cover" style="background-image:${fundo(j)}">${plats(j).map(p=>`<span class="plat">${esc(p)}</span>`).join("")}</div>
       <div class="info"><h3>${esc(j.titulo)}</h3>
-        <div class="meta">${j.formatos.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${f}</span>`).join("")}${j.versao?`<span class="tag">${esc(j.versao)}</span>`:""}</div>
+        <div class="meta">${tagsF(fmts(j))}</div>
       </div>
-    </button>`).join("") : `<p class="empty">Nenhum projeto encontrado. Tente outro filtro.</p>`;
+    </button>`).join("") : `<p class="empty">Nenhuma localização encontrada. Tente outro nome.</p>`;
 }
 
 $("#grid").addEventListener("click", e=>{
@@ -204,11 +228,14 @@ $("#grid").addEventListener("click", e=>{
   const j=JOGOS[c.dataset.i], m=$("#modal");
   m.innerHTML = `<button class="close" aria-label="Fechar" onclick="this.closest('dialog').close()">×</button>
     <h2>${esc(j.titulo)}</h2>
-    <div class="meta"><span class="tag">${esc(j.plataforma)}</span>${j.formatos.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${f}</span>`).join("")}${j.versao?`<span class="tag">${esc(j.versao)}</span>`:""}</div>
     <p>${esc(j.descricao)}</p>
     ${j.autor?`<h3>Autor</h3><p>${esc(j.autor)}</p>`:""}
-    <h3>Como instalar</h3><p>${esc(j.instalacao)}</p>
-    ${(j.downloads||[]).map((d,n)=>`<a class="btn ${n?"alt":""}" href="${esc(d.url)}" target="_blank" rel="noopener">${n?"Espelho: ":"Baixar: "}${esc(d.nome)}</a>`).join(" ")}`;
+    <h3>Baixe a sua versão</h3>
+    ${j.versoes.map(v=>`<div class="versao">
+      <a class="btn" href="${esc(v.download)}" target="_blank" rel="noopener">${esc(v.plataforma)}</a>
+      <div class="meta">${tagsF(v.formatos)}${v.versao?`<span class="tag">${esc(v.versao)}</span>`:""}</div>
+      ${v.instalacao?`<p class="inst">${esc(v.instalacao)}</p>`:""}
+    </div>`).join("")}`;
   m.showModal();
 });
 $("#modal").addEventListener("click", e=>{ if(e.target.id==="modal") e.target.close(); });
