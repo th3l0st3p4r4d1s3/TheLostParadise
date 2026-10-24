@@ -4,94 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Lost Paradise | Traduções e Dublagens</title>
+<meta name="description" content="Traduções e dublagens em português brasileiro para jogos de PC e consoles, feitas por fãs e gratuitas.">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#151a22;--surface:#1e2530;--line:#2f3846;--text:#e9e6dc;--muted:#9aa4b2;--yellow:#a855f7;--teal:#43b9a9}
+:root{--bg:#151a22;--surface:#1e2530;--line:#2f3846;--text:#e9e6dc;--muted:#9aa4b2;--accent:#a855f7;--teal:#43b9a9;
+--faixas:repeating-linear-gradient(90deg,transparent 0 78px,rgba(168,85,247,.09) 78px 80px)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 "Source Sans 3",system-ui,sans-serif}
-h1,h2,h3,.logo{font-family:Archivo,Impact,sans-serif;margin:0;line-height:1.05}
+h1,h2,h3{font-family:Archivo,Impact,sans-serif;margin:0;line-height:1.05}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Cabeçalho e destaque */
 header.top{border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.logo{font-weight:800;font-stretch:110%;font-size:1.25rem;text-decoration:none}
-.logo span{color:var(--yellow)}
-nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600}
+.logo img{height:52px;display:block}
+nav a{display:inline-block;margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600}
 nav a:hover{color:var(--text)}
-.hero{padding:72px 0 40px;background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(168,85,247,.09) 78px 80px)}
+.hero{padding:72px 0 40px;background:var(--faixas)}
 .hero-in{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .hero-logo{width:min(420px,42%);height:auto;flex:none}
-@media(max-width:720px){.hero-in{flex-direction:column;align-items:flex-start}.hero-logo{width:min(320px,80%)}}
 .hero h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900;font-stretch:75%;max-width:14ch;letter-spacing:-.01em}
 .hero p{color:var(--muted);max-width:52ch;margin:18px 0 0;font-size:1.1rem}
-.tools{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);padding:14px 0;
-background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(168,85,247,.09) 78px 80px),var(--bg)}
+@media(max-width:720px){.hero-in{flex-direction:column;align-items:flex-start}.hero-logo{width:min(320px,80%)}}
+
+/* Busca e filtros */
+.tools{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);padding:14px 0;background:var(--faixas),var(--bg)}
 .tools .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 input[type=search]{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:6px;font:inherit}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:7px 14px;border-radius:99px;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
-.chip[aria-pressed=true]{background:var(--yellow);border-color:var(--yellow);color:#fff}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Catálogo */
 .count{color:var(--muted);margin:26px 0 14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;padding-bottom:64px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;display:flex;flex-direction:column}
-.card:hover{border-color:var(--yellow)}
 .cover{aspect-ratio:3/4;background-size:cover;background-position:center;display:flex;flex-wrap:wrap;align-content:flex-end;gap:6px;padding:12px}
 .plat{background:rgba(0,0,0,.65);padding:3px 10px;border-radius:4px;font-weight:600;font-size:.85rem}
 .info{padding:14px}
 .info h3{font-size:1.1rem;font-weight:800;font-stretch:90%}
 .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .tag{font-size:.8rem;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--teal);color:var(--teal)}
-.tag.trad{border-color:var(--yellow);color:var(--yellow)}
+.tag.trad{border-color:var(--accent);color:var(--accent)}
+.empty{padding:40px 0;color:var(--muted)}
+
+/* Janela do jogo */
 dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:10px;max-width:560px;width:calc(100% - 32px);padding:28px}
 dialog::backdrop{background:rgba(5,8,12,.75)}
 dialog h2{font-size:1.8rem;font-weight:800;margin-bottom:6px}
 dialog h3{font-size:1rem;margin:20px 0 4px;color:var(--muted)}
-.btn{display:inline-block;background:var(--yellow);color:#fff;font-weight:700;padding:11px 22px;border-radius:6px;text-decoration:none;margin-top:22px}
-.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:8px}
 .close{float:right;background:none;border:0;color:var(--muted);font-size:1.6rem;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.versao{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.versao .meta{margin-top:10px}
+.inst{color:var(--muted);margin:8px 0 0;font-size:.95rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:11px 22px;border-radius:6px;text-decoration:none}
+.btn.off{opacity:.45;pointer-events:none}
+
+/* Apoio */
 .apoio{border-top:1px solid var(--line);padding:56px 0;background:var(--surface)}
 .apoio h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;font-stretch:85%}
 .apoio p{color:var(--muted);max-width:56ch;margin:12px 0 0}
-.apoio .acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
-.apoio .btn{margin-top:0;border:0;font:700 1rem "Source Sans 3",sans-serif;cursor:pointer}
-.pix{color:var(--muted);font-size:.9rem;word-break:break-all}
-.versao{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-.versao .btn{margin-top:0}
-.versao .meta{margin-top:10px}
-.inst{color:var(--muted);margin:8px 0 0;font-size:.95rem}
-.empty{padding:40px 0;color:var(--muted)}
-.card,.chip,.btn,.hero-logo,nav a{transition:transform .25s ease,background-color .25s ease,border-color .25s ease,color .25s ease}
-nav a{display:inline-block}
-.card:hover{transform:scale(1.04);position:relative;z-index:2}
-.chip:hover,.btn:hover{transform:scale(1.07)}
-.hero-logo:hover{transform:scale(1.04)}
-nav a:hover{transform:scale(1.08)}
-.chip:active,.btn:active{transform:scale(.97)}
+.acoes{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;margin-top:26px}
+.apoio-item{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.rotulo{font:800 1.15rem Archivo,sans-serif}
+.logo-apoio{display:inline-block}
+.logo-apoio img{height:256px;width:auto;max-width:100%;object-fit:contain;display:block}
+.pix-qr{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:224px;background:#fff;color:#1a1a1a;border:0;border-radius:12px;padding:14px;cursor:pointer;font:600 .95rem "Source Sans 3",sans-serif;text-align:center}
+.pix-qr img{width:180px;height:180px;display:block}
+#pixTexto{display:flex;align-items:center;justify-content:center;min-height:3.2em}
 
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+/* Animações */
+.card,.chip,.btn,.hero-logo,nav a,.logo-apoio,.pix-qr{transition:transform .25s ease,background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease,filter .25s ease}
+.card:hover{transform:scale(1.04);position:relative;z-index:2;border-color:var(--accent)}
+.chip:hover,.btn:hover,nav a:hover{transform:scale(1.07)}
+.hero-logo:hover{transform:scale(1.04)}
+.chip:active,.btn:active{transform:scale(.97)}
+.logo-apoio:hover{transform:translateY(-4px) scale(1.06);filter:drop-shadow(0 8px 18px rgba(168,85,247,.45))}
+.pix-qr:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 28px rgba(168,85,247,.35)}
+.pix-qr:active{transform:scale(.98)}
 dialog[open]{animation:abrir .25s ease}
 dialog[open]::backdrop{animation:esmaecer .25s ease}
 @keyframes abrir{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
 @keyframes esmaecer{from{opacity:0}to{opacity:1}}
-
 .grid{transition:opacity .18s ease,transform .18s ease,height .35s ease}
 .grid.animando{overflow:hidden}
 .grid.saindo{opacity:0;transform:translateY(-6px)}
 .grid.entrando{animation:entrada .3s ease}
 @keyframes entrada{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-
-dialog[open]{animation:abrir .22s ease}
-dialog[open]::backdrop{animation:esmaecer .22s ease}
-@keyframes abrir{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
-@keyframes esmaecer{from{opacity:0}to{opacity:1}}
-
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -100,7 +107,7 @@ dialog[open]::backdrop{animation:esmaecer .22s ease}
 <body>
 
 <header class="top"><div class="wrap">
-  <a class="logo" id="logo" href="#">The <span>Lost</span> Paradise</a>
+  <a class="logo" href="#" aria-label="The Lost Paradise"><img src="logo.png" alt="The Lost Paradise"></a>
   <nav><a href="#catalogo">Catálogo</a><a href="#apoio" id="navApoio" hidden>Apoie</a><a href="https://discord.com" target="_blank" rel="noopener">Discord</a></nav>
 </div></header>
 
@@ -109,7 +116,7 @@ dialog[open]::backdrop{animation:esmaecer .22s ease}
     <h1>Lost in translation? Aqui não. O paraíso dos jogos em português.</h1>
     <p>Traduções e dublagens feitas sem fins lucrativos para PC e Consoles.</p>
   </div>
-  <img class="hero-logo" src="logo.png" alt="The Lost Paradise">
+  <img class="hero-logo" src="logo.png" alt="">
 </div></section>
 
 <div class="tools" id="catalogo"><div class="wrap">
@@ -132,18 +139,23 @@ dialog[open]::backdrop{animation:esmaecer .22s ease}
 <dialog id="modal"></dialog>
 
 <footer><div class="wrap">
-  <span>© <span id="ano"></span> The Lost Paradise. Projeto de fã, sem fins lucrativos. Não distribuímos jogos, só os patches.</span>
-  <span><a href="politica.html">Política de Privacidade</a> &nbsp;|&nbsp; <a href="https://discord.com" target="_blank" rel="noopener">Discord</a></span>
+  <span>© <span id="ano"></span> The Lost Paradise. Localizações sem fins lucrativos. Não distribuímos jogos, só patches.</span>
+  <span><a href="politica.html">Política de Privacidade</a> &nbsp;|&nbsp; <a href="https://discord.gg/CWGXQuMp5c" target="_blank" rel="noopener">Discord</a></span>
 </div></footer>
 
 <script>
-/* Apoio */
-const APOIO = { patreon: "https://www.patreon.com/c/ZANIT767", pix: "eeeb60c3-a826-4929-9d05-b6df5163df42", apoia: "" };
+/* ===== CONFIGURAÇÃO ===== */
 
-/* Plataformas */
+/* Apoio: deixe "" no que não usar. pixCodigo é o "Pix Copia e Cola" (o QR está em pix-qr.svg). */
+const APOIO = {
+  patreon: "https://www.patreon.com/c/ZANIT767",
+  pixCodigo: "00020101021126580014br.gov.bcb.pix0136eeeb60c3-a826-4929-9d05-b6df5163df425204000053039865802BR5917The Lost Paradise6006BRASIL62070503***6304F694"
+};
+
+/* Plataformas dos filtros. O nome em cada versão do jogo precisa ser idêntico ao daqui. */
 const PLATAFORMAS = ["PC","Playstation®","Playstation®2","Playstation®3","Playstation Portable","Xbox","Xbox 360","GameCube","Wii"];
 
-/* Jogos */
+/* Jogos: um bloco por jogo, uma "versão" por plataforma. download "#" mostra "em breve". */
 const JOGOS = [
   {
     titulo: "Need for Speed: Most Wanted",
@@ -151,21 +163,11 @@ const JOGOS = [
     descricao: "Tradução e dublagem em Português Brasileiro.",
     autor: "",
     versoes: [
-      { plataforma: "PC", formatos: ["Tradução", "Dublagem"], versao: "0.1",
-        instalacao: "",
-        download: "#" },
-      { plataforma: "Playstation®2", formatos: ["Tradução", "Dublagem"], versao: "0.1",
-        instalacao: "",
-        download: "#" },
-      { plataforma: "GameCube", formatos: ["Tradução", "Dublagem"], versao: "0.1",
-        instalacao: "",
-        download: "#" },
-      { plataforma: "Xbox", formatos: ["Tradução", "Dublagem"], versao: "0.1",
-        instalacao: "",
-        download: "#" },
-      { plataforma: "Xbox 360", formatos: ["Tradução", "Dublagem"], versao: "0.1",
-        instalacao: "",
-        download: "#" }
+      { plataforma: "PC", formatos: ["Tradução","Dublagem"], versao: "0.1", instalacao: "", download: "#" },
+      { plataforma: "Playstation®2", formatos: ["Tradução","Dublagem"], versao: "0.1", instalacao: "", download: "#" },
+      { plataforma: "GameCube", formatos: ["Tradução","Dublagem"], versao: "0.1", instalacao: "", download: "#" },
+      { plataforma: "Xbox", formatos: ["Tradução","Dublagem"], versao: "0.1", instalacao: "", download: "#" },
+      { plataforma: "Xbox 360", formatos: ["Tradução","Dublagem"], versao: "0.1", instalacao: "", download: "#" }
     ]
   },
   {
@@ -174,91 +176,128 @@ const JOGOS = [
     descricao: "Tradução e dublagem em Português Brasileiro.",
     autor: "",
     versoes: [
-      { plataforma: "Playstation®2", formatos: ["Tradução"], versao: "",
-        instalacao: "",
-        download: "#" }
+      { plataforma: "Playstation®2", formatos: ["Tradução"], versao: "", instalacao: "", download: "#" }
     ]
   }
 ];
-/* CLOSE */
 
-/* Logo */
-const LOGO = "logo.png";
-if (LOGO) {
-  $logo = document.getElementById("logo");
-  $logo.innerHTML = `<img src="${LOGO}" alt="Logo" style="height:52px;display:block">`;
-  const ic = document.createElement("link"); ic.rel = "icon"; ic.href = LOGO; document.head.appendChild(ic);
-}
-
+/* ===== CÓDIGO ===== */
 const $ = s => document.querySelector(s);
-
-(function apoio(){
-  if(!APOIO.patreon && !APOIO.pix && !APOIO.apoia) return;
-  const a=$("#apoioAcoes");
-  if(APOIO.patreon) a.insertAdjacentHTML("beforeend",`<a class="btn" href="${APOIO.patreon}" target="_blank" rel="noopener">Apoiar no Patreon</a>`);
-  if(APOIO.apoia) a.insertAdjacentHTML("beforeend",`<a class="btn" href="${APOIO.apoia}" target="_blank" rel="noopener">Apoiar no Apoia.se</a>`);
-  if(APOIO.pix){
-    a.insertAdjacentHTML("beforeend",`<button class="btn" id="copiaPix" type="button">Copiar chave Pix</button><span class="pix"></span>`);
-    a.querySelector(".pix").textContent=APOIO.pix;
-    $("#copiaPix").onclick=async e=>{try{await navigator.clipboard.writeText(APOIO.pix);e.target.textContent="Chave copiada!";}catch(x){e.target.textContent="Copie a chave ao lado";}};
-  }
-  $("#apoio").hidden=false; $("#navApoio").hidden=false;
-})();
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const estado = {busca:"", formato:"Todos", plat:"Todas"};
-document.getElementById("ano").textContent = new Date().getFullYear();
+$("#ano").textContent = new Date().getFullYear();
 
-function cor(t){let h=0;for(const c of t)h=(h*31+c.charCodeAt(0))%360;return h}
+/* Apoio: logo do Patreon + QR Code do Pix (clicável, copia o código) */
+(function apoio(){
+  if(!APOIO.patreon && !APOIO.pixCodigo) return;
+  const a = $("#apoioAcoes");
+  if(APOIO.patreon) a.insertAdjacentHTML("beforeend",
+    `<div class="apoio-item"><a class="logo-apoio" href="${esc(APOIO.patreon)}" target="_blank" rel="noopener" aria-label="Apoiar no Patreon"><img src="patreon.png" alt="Patreon"></a></div>`);
+  if(APOIO.pixCodigo){
+    const padrao = "Escaneie ou clique para copiar o código";
+    a.insertAdjacentHTML("beforeend",
+      `<div class="apoio-item"><span class="rotulo">Pix</span>
+        <button class="pix-qr" id="copiaPix" type="button" aria-label="Copiar código Pix">
+          <img src="pix-qr.svg" alt="QR Code do Pix" width="180" height="180">
+          <span id="pixTexto">${padrao}</span>
+        </button></div>`);
+    $("#copiaPix").onclick = async () => {
+      const t = $("#pixTexto"); let ok = true;
+      try{ await navigator.clipboard.writeText(APOIO.pixCodigo); }catch(e){ ok = false; }
+      t.textContent = ok ? "Código copiado!" : "Não deu pra copiar. Escaneie o QR Code.";
+      setTimeout(() => t.textContent = padrao, 2200);
+    };
+  }
+  $("#apoio").hidden = false; $("#navApoio").hidden = false;
+})();
+
+/* Catálogo */
+const plats = j => j.versoes.map(v => v.plataforma);
+const fmts  = j => [...new Set(j.versoes.flatMap(v => v.formatos))];
+const tagsF = fs => fs.map(f => `<span class="tag ${f==="Tradução"?"trad":""}">${esc(f)}</span>`).join("");
+
 function fundo(j){
-  const h=cor(j.titulo);
-  const grad=`linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
+  let h = 0; for(const c of j.titulo) h = (h*31 + c.charCodeAt(0)) % 360;
+  const grad = `linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
   return j.capa ? `url('${j.capa}'), ${grad}` : grad;
 }
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 
-function chips(el, itens, chave){
-  el.innerHTML = itens.map(i=>`<button class="chip" aria-pressed="${estado[chave]===i}" data-v="${esc(i)}">${esc(i)}</button>`).join("");
-  el.onclick = e => { const b=e.target.closest("button"); if(!b) return; estado[chave]=b.dataset.v; montar(); };
+function marcar(el, chave){
+  el.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === estado[chave]));
 }
 
-const plats = j => j.versoes.map(v=>v.plataforma);
-const fmts  = j => [...new Set(j.versoes.flatMap(v=>v.formatos))];
-const tagsF = fs => fs.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${esc(f)}</span>`).join("");
+function chips(el, itens, chave){
+  if(!el.children.length){
+    el.innerHTML = itens.map(i => `<button class="chip" data-v="${esc(i)}">${esc(i)}</button>`).join("");
+    el.onclick = e => {
+      const b = e.target.closest("button"); if(!b) return;
+      estado[chave] = b.dataset.v;
+      marcar(el, chave);
+      trocar();
+    };
+  }
+  marcar(el, chave);
+}
+
+/* Troca de filtro: esmaece, refaz a lista e desliza a altura até o novo tamanho */
+let timer;
+function trocar(){
+  const g = $("#grid");
+  clearTimeout(timer);
+  const h0 = g.offsetHeight;
+  g.style.height = h0 + "px";
+  g.classList.add("animando","saindo");
+  g.classList.remove("entrando");
+  timer = setTimeout(() => {
+    montar();
+    g.style.height = "auto";
+    const h1 = g.offsetHeight;
+    g.style.height = h0 + "px"; void g.offsetWidth;
+    g.style.height = h1 + "px";
+    g.classList.remove("saindo");
+    g.classList.add("entrando");
+    timer = setTimeout(() => { g.style.height = ""; g.classList.remove("animando"); }, 360);
+  }, 180);
+}
 
 function montar(){
   chips($("#chipsFormato"), ["Todos","Tradução","Dublagem"], "formato");
   chips($("#chipsPlat"), ["Todas", ...new Set([...PLATAFORMAS, ...JOGOS.flatMap(plats)])], "plat");
   const q = estado.busca.toLowerCase();
-  const lista = JOGOS.map((j,i)=>({j,i})).filter(({j})=>
+  const lista = JOGOS.map((j,i) => ({j,i})).filter(({j}) =>
     j.titulo.toLowerCase().includes(q) &&
-    j.versoes.some(v=>(estado.formato==="Todos"||v.formatos.includes(estado.formato)) &&
-                      (estado.plat==="Todas"||v.plataforma===estado.plat)));
-  $("#contagem").textContent = lista.length+(lista.length===1?" projeto":" localizações");
-  $("#grid").innerHTML = lista.length ? lista.map(({j,i})=>`
+    j.versoes.some(v => (estado.formato==="Todos" || v.formatos.includes(estado.formato)) &&
+                        (estado.plat==="Todas" || v.plataforma===estado.plat)));
+  $("#contagem").textContent = lista.length + (lista.length===1 ? " localização" : " localizações");
+  $("#grid").innerHTML = lista.length ? lista.map(({j,i}) => `
     <button class="card" data-i="${i}">
-      <div class="cover" style="background-image:${fundo(j)}">${plats(j).map(p=>`<span class="plat">${esc(p)}</span>`).join("")}</div>
-      <div class="info"><h3>${esc(j.titulo)}</h3>
-        <div class="meta">${tagsF(fmts(j))}</div>
-      </div>
+      <div class="cover" style="background-image:${fundo(j)}">${plats(j).map(p => `<span class="plat">${esc(p)}</span>`).join("")}</div>
+      <div class="info"><h3>${esc(j.titulo)}</h3><div class="meta">${tagsF(fmts(j))}</div></div>
     </button>`).join("") : `<p class="empty">Nenhuma localização encontrada. Tente outro nome.</p>`;
 }
 
-$("#grid").addEventListener("click", e=>{
-  const c=e.target.closest(".card"); if(!c) return;
-  const j=JOGOS[c.dataset.i], m=$("#modal");
+/* Janela do jogo */
+$("#grid").addEventListener("click", e => {
+  const c = e.target.closest(".card"); if(!c) return;
+  const j = JOGOS[c.dataset.i], m = $("#modal");
   m.innerHTML = `<button class="close" aria-label="Fechar" onclick="this.closest('dialog').close()">×</button>
     <h2>${esc(j.titulo)}</h2>
     <p>${esc(j.descricao)}</p>
-    ${j.autor?`<h3>Autor</h3><p>${esc(j.autor)}</p>`:""}
+    ${j.autor ? `<h3>Autor</h3><p>${esc(j.autor)}</p>` : ""}
     <h3>Baixe a sua versão</h3>
-    ${j.versoes.map(v=>`<div class="versao">
-      <a class="btn" href="${esc(v.download)}" target="_blank" rel="noopener">${esc(v.plataforma)}</a>
-      <div class="meta">${tagsF(v.formatos)}${v.versao?`<span class="tag">${esc(v.versao)}</span>`:""}</div>
-      ${v.instalacao?`<p class="inst">${esc(v.instalacao)}</p>`:""}
-    </div>`).join("")}`;
+    ${j.versoes.map(v => {
+      const ok = v.download && v.download !== "#";
+      return `<div class="versao">
+        ${ok ? `<a class="btn" href="${esc(v.download)}" target="_blank" rel="noopener">${esc(v.plataforma)}</a>`
+             : `<span class="btn off">${esc(v.plataforma)} · em breve</span>`}
+        <div class="meta">${tagsF(v.formatos)}${v.versao ? `<span class="tag">${esc(v.versao)}</span>` : ""}</div>
+        ${v.instalacao ? `<p class="inst">${esc(v.instalacao)}</p>` : ""}
+      </div>`;
+    }).join("")}`;
   m.showModal();
 });
-$("#modal").addEventListener("click", e=>{ if(e.target.id==="modal") e.target.close(); });
-$("#busca").addEventListener("input", e=>{ estado.busca=e.target.value; montar(); });
+$("#modal").addEventListener("click", e => { if(e.target.id === "modal") e.target.close(); });
+$("#busca").addEventListener("input", e => { estado.busca = e.target.value; montar(); });
 montar();
 </script>
 </body>
