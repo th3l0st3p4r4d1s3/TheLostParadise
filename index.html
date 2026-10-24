@@ -72,7 +72,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 <section class="hero"><div class="wrap hero-in">
   <div class="hero-txt">
     <h1>Jogos em português, do jeito que deveriam ser.</h1>
-    <p>Traduções e dublagens feitas à mão para PC e consoles. Escolha o jogo, baixe o patch e siga o passo a passo.</p>
+    <p>Traduções e dublagens feitas sem fins lucrativos para PC e Consoles. Escolha o jogo, baixe o patch e siga o passo a passo.</p>
   </div>
   <img class="hero-logo" src="logo.png" alt="The Lost Paradise">
 </div></section>
@@ -102,25 +102,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 </div></footer>
 
 <script>
-/* APOIO: preencha o que você usar. Deixe "" no que não usar. Se tudo ficar vazio, a seção some. */
-const APOIO = { patreon: "https://www.patreon.com/c/ZANIT767", pix: "eeeb60c3-a826-4929-9d05-b6df5163df42", apoia: "" };   /* patreon: link da sua página no Patreon | pix: sua chave Pix | apoia: link do Apoia.se */
+/* Apoio */
+const APOIO = { patreon: "https://www.patreon.com/c/ZANIT767", pix: "eeeb60c3-a826-4929-9d05-b6df5163df42", apoia: "" };
 
-/* Plataformas que aparecem nos filtros (edite à vontade) */
-const PLATAFORMAS = ["PC","PS1","PS2","PS3","PSP","Xbox","Xbox 360","GameCube","Wii"];
+/* Plataformas */
+const PLATAFORMAS = ["PC","Playstation®1","Playstation®2","Playstation®3","Playstation Portable","Xbox","Xbox 360","GameCube","Wii"];
 
-/* ===== EDITE AQUI: um bloco por tradução/dublagem =====
-   formatos: "Tradução" e/ou "Dublagem"
-   capa: link de imagem (opcional). Sem capa, o site gera uma cor automática.
-   downloads: lista de links, o primeiro é o principal. Ex.: Mediafire, Mega, Drive */
+/* Jogos */
 const JOGOS = [
   {
     titulo: "Need for Speed: Most Wanted",
     plataforma: "PC",
     formatos: ["Tradução", "Dublagem"],
     versao: "", autor: "",
-    capa: "",
-    descricao: "Tradução e dublagem em português do Brasil para a versão de PC.",
-    instalacao: "Baixe o instalador, execute e selecione a pasta do jogo.",
+    capa: "capas/5028031-need-for-speed-most-wanted-windows-front-cover.jpg",
+    descricao: "Tradução e dublagem em Português Brasileiro para a versão de PC.",
+    instalacao: "Baixe os arquivos, mova para a pasta do jogo e substitua.",
     downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
   },
   {
@@ -129,7 +126,7 @@ const JOGOS = [
     formatos: ["Tradução"],
     versao: "", autor: "",
     capa: "",
-    descricao: "Tradução em português do Brasil para a versão de PS3, incluindo legendas dos vídeos.",
+    descricao: "Tradução em Português Brasileiro para a versão de PS3, incluindo legendas dos vídeos.",
     instalacao: "Instruções de instalação aqui.",
     downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
   },
@@ -144,9 +141,9 @@ const JOGOS = [
     downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
   }
 ];
-/* ===== FIM DA ÁREA DE EDIÇÃO ===== */
+/* CLOSE */
 
-/* LOGO: coloque o arquivo na mesma pasta do index.html e escreva o nome aqui, ex.: "logo.png" */
+/* Logo */
 const LOGO = "logo.png";
 if (LOGO) {
   $logo = document.getElementById("logo");
