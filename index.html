@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lost Paradise | Traduções e Dublagens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#151a22;--surface:#1e2530;--line:#2f3846;--text:#e9e6dc;--muted:#9aa4b2;--yellow:#a855f7;--teal:#43b9a9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:Archivo,Impact,sans-serif;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo{font-weight:800;font-stretch:110%;font-size:1.25rem;text-decoration:none}
+.logo span{color:var(--yellow)}
+nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600}
+nav a:hover{color:var(--text)}
+.hero{padding:72px 0 40px;background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(168,85,247,.09) 78px 80px)}
+.hero-in{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hero-logo{width:min(420px,42%);height:auto;flex:none}
+@media(max-width:720px){.hero-in{flex-direction:column;align-items:flex-start}.hero-logo{width:min(320px,80%)}}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900;font-stretch:75%;max-width:14ch;letter-spacing:-.01em}
+.hero p{color:var(--muted);max-width:52ch;margin:18px 0 0;font-size:1.1rem}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 0}
+.tools .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input[type=search]{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:6px;font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:7px 14px;border-radius:99px;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--yellow);border-color:var(--yellow);color:#fff}
+.count{color:var(--muted);margin:26px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;padding-bottom:64px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;display:flex;flex-direction:column}
+.card:hover{border-color:var(--yellow)}
+.cover{aspect-ratio:3/4;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px}
+.plat{background:rgba(0,0,0,.65);padding:3px 10px;border-radius:4px;font-weight:600;font-size:.85rem}
+.info{padding:14px}
+.info h3{font-size:1.1rem;font-weight:800;font-stretch:90%}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:.8rem;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--teal);color:var(--teal)}
+.tag.trad{border-color:var(--yellow);color:var(--yellow)}
+dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:10px;max-width:560px;width:calc(100% - 32px);padding:28px}
+dialog::backdrop{background:rgba(5,8,12,.75)}
+dialog h2{font-size:1.8rem;font-weight:800;margin-bottom:6px}
+dialog h3{font-size:1rem;margin:20px 0 4px;color:var(--muted)}
+.btn{display:inline-block;background:var(--yellow);color:#fff;font-weight:700;padding:11px 22px;border-radius:6px;text-decoration:none;margin-top:22px}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:8px}
+.close{float:right;background:none;border:0;color:var(--muted);font-size:1.6rem;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.apoio{border-top:1px solid var(--line);padding:56px 0;background:var(--surface)}
+.apoio h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;font-stretch:85%}
+.apoio p{color:var(--muted);max-width:56ch;margin:12px 0 0}
+.apoio .acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+.apoio .btn{margin-top:0;border:0;font:700 1rem "Source Sans 3",sans-serif;cursor:pointer}
+.pix{color:var(--muted);font-size:.9rem;word-break:break-all}
+.empty{padding:40px 0;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="logo" id="logo" href="#">The <span>Lost</span> Paradise</a>
+  <nav><a href="#catalogo">Catálogo</a><a href="#apoio" id="navApoio" hidden>Apoie</a><a href="https://discord.com" target="_blank" rel="noopener">Discord</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap hero-in">
+  <div class="hero-txt">
+    <h1>Jogos em português, do jeito que deveriam ser.</h1>
+    <p>Traduções e dublagens feitas à mão para PC e consoles. Escolha o jogo, baixe o patch e siga o passo a passo.</p>
+  </div>
+  <img class="hero-logo" src="logo.png" alt="The Lost Paradise">
+</div></section>
+
+<div class="tools" id="catalogo"><div class="wrap">
+  <input type="search" id="busca" placeholder="Buscar jogo" aria-label="Buscar jogo">
+  <div class="chips" id="chipsFormato" aria-label="Formato"></div>
+  <div class="chips" id="chipsPlat" aria-label="Plataforma"></div>
+</div></div>
+
+<main class="wrap">
+  <p class="count" id="contagem"></p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="apoio" id="apoio" hidden><div class="wrap">
+  <h2>Os patches são e continuarão gratuitos.</h2>
+  <p>Cada tradução e dublagem leva muitas horas de trabalho. Se este projeto te ajudou e você quiser contribuir, qualquer valor ajuda a manter tudo no ar. Contribuir é opcional e não muda nada no seu download.</p>
+  <div class="acoes" id="apoioAcoes"></div>
+</div></section>
+
+<dialog id="modal"></dialog>
+
+<footer><div class="wrap">
+  <span>© <span id="ano"></span> The Lost Paradise. Projeto de fã, sem fins lucrativos. Não distribuímos jogos, só os patches.</span>
+  <span><a href="politica.html">Política de Privacidade</a> &nbsp;|&nbsp; <a href="https://discord.com" target="_blank" rel="noopener">Discord</a></span>
+</div></footer>
+
+<script>
+/* APOIO: preencha o que você usar. Deixe "" no que não usar. Se tudo ficar vazio, a seção some. */
+const APOIO = { patreon: "https://www.patreon.com/c/ZANIT767", pix: "eeeb60c3-a826-4929-9d05-b6df5163df42", apoia: "" };   /* patreon: link da sua página no Patreon | pix: sua chave Pix | apoia: link do Apoia.se */
+
+/* Plataformas que aparecem nos filtros (edite à vontade) */
+const PLATAFORMAS = ["PC","PS1","PS2","PS3","PSP","Xbox","Xbox 360","GameCube","Wii"];
+
+/* ===== EDITE AQUI: um bloco por tradução/dublagem =====
+   formatos: "Tradução" e/ou "Dublagem"
+   capa: link de imagem (opcional). Sem capa, o site gera uma cor automática.
+   downloads: lista de links, o primeiro é o principal. Ex.: Mediafire, Mega, Drive */
+const JOGOS = [
+  {
+    titulo: "Need for Speed: Most Wanted",
+    plataforma: "PC",
+    formatos: ["Tradução", "Dublagem"],
+    versao: "", autor: "",
+    capa: "",
+    descricao: "Tradução e dublagem em português do Brasil para a versão de PC.",
+    instalacao: "Baixe o instalador, execute e selecione a pasta do jogo.",
+    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
+  },
+  {
+    titulo: "Need for Speed: Most Wanted",
+    plataforma: "PS3",
+    formatos: ["Tradução"],
+    versao: "", autor: "",
+    capa: "",
+    descricao: "Tradução em português do Brasil para a versão de PS3, incluindo legendas dos vídeos.",
+    instalacao: "Instruções de instalação aqui.",
+    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
+  },
+  {
+    titulo: "Need for Speed: Underground",
+    plataforma: "PS2",
+    formatos: ["Tradução"],
+    versao: "", autor: "",
+    capa: "",
+    descricao: "Tradução em português do Brasil para a versão de PS2.",
+    instalacao: "Aplique o patch na sua imagem do jogo.",
+    downloads: [{nome:"Mediafire", url:"#"}, {nome:"Mega", url:"#"}]
+  }
+];
+/* ===== FIM DA ÁREA DE EDIÇÃO ===== */
+
+/* LOGO: coloque o arquivo na mesma pasta do index.html e escreva o nome aqui, ex.: "logo.png" */
+const LOGO = "logo.png";
+if (LOGO) {
+  $logo = document.getElementById("logo");
+  $logo.innerHTML = `<img src="${LOGO}" alt="Logo" style="height:52px;display:block">`;
+  const ic = document.createElement("link"); ic.rel = "icon"; ic.href = LOGO; document.head.appendChild(ic);
+}
+
+const $ = s => document.querySelector(s);
+
+(function apoio(){
+  if(!APOIO.patreon && !APOIO.pix && !APOIO.apoia) return;
+  const a=$("#apoioAcoes");
+  if(APOIO.patreon) a.insertAdjacentHTML("beforeend",`<a class="btn" href="${APOIO.patreon}" target="_blank" rel="noopener">Apoiar no Patreon</a>`);
+  if(APOIO.apoia) a.insertAdjacentHTML("beforeend",`<a class="btn" href="${APOIO.apoia}" target="_blank" rel="noopener">Apoiar no Apoia.se</a>`);
+  if(APOIO.pix){
+    a.insertAdjacentHTML("beforeend",`<button class="btn" id="copiaPix" type="button">Copiar chave Pix</button><span class="pix"></span>`);
+    a.querySelector(".pix").textContent=APOIO.pix;
+    $("#copiaPix").onclick=async e=>{try{await navigator.clipboard.writeText(APOIO.pix);e.target.textContent="Chave copiada!";}catch(x){e.target.textContent="Copie a chave ao lado";}};
+  }
+  $("#apoio").hidden=false; $("#navApoio").hidden=false;
+})();
+const estado = {busca:"", formato:"Todos", plat:"Todas"};
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+function cor(t){let h=0;for(const c of t)h=(h*31+c.charCodeAt(0))%360;return h}
+function fundo(j){
+  if(j.capa) return `url("${j.capa}")`;
+  const h=cor(j.titulo+j.plataforma);
+  return `linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function chips(el, itens, chave){
+  el.innerHTML = itens.map(i=>`<button class="chip" aria-pressed="${estado[chave]===i}" data-v="${esc(i)}">${esc(i)}</button>`).join("");
+  el.onclick = e => { const b=e.target.closest("button"); if(!b) return; estado[chave]=b.dataset.v; montar(); };
+}
+
+function montar(){
+  chips($("#chipsFormato"), ["Todos","Tradução","Dublagem"], "formato");
+  chips($("#chipsPlat"), ["Todas", ...new Set([...PLATAFORMAS, ...JOGOS.map(j=>j.plataforma)])], "plat");
+  const q = estado.busca.toLowerCase();
+  const lista = JOGOS.map((j,i)=>({j,i})).filter(({j})=>
+    (estado.formato==="Todos"||j.formatos.includes(estado.formato)) &&
+    (estado.plat==="Todas"||j.plataforma===estado.plat) &&
+    j.titulo.toLowerCase().includes(q));
+  $("#contagem").textContent = lista.length+(lista.length===1?" projeto":" projetos");
+  $("#grid").innerHTML = lista.length ? lista.map(({j,i})=>`
+    <button class="card" data-i="${i}">
+      <div class="cover" style="background-image:${fundo(j)}"><span class="plat">${esc(j.plataforma)}</span></div>
+      <div class="info"><h3>${esc(j.titulo)}</h3>
+        <div class="meta">${j.formatos.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${f}</span>`).join("")}${j.versao?`<span class="tag">${esc(j.versao)}</span>`:""}</div>
+      </div>
+    </button>`).join("") : `<p class="empty">Nenhum projeto encontrado. Tente outro filtro.</p>`;
+}
+
+$("#grid").addEventListener("click", e=>{
+  const c=e.target.closest(".card"); if(!c) return;
+  const j=JOGOS[c.dataset.i], m=$("#modal");
+  m.innerHTML = `<button class="close" aria-label="Fechar" onclick="this.closest('dialog').close()">×</button>
+    <h2>${esc(j.titulo)}</h2>
+    <div class="meta"><span class="tag">${esc(j.plataforma)}</span>${j.formatos.map(f=>`<span class="tag ${f==="Tradução"?"trad":""}">${f}</span>`).join("")}${j.versao?`<span class="tag">${esc(j.versao)}</span>`:""}</div>
+    <p>${esc(j.descricao)}</p>
+    ${j.autor?`<h3>Autor</h3><p>${esc(j.autor)}</p>`:""}
+    <h3>Como instalar</h3><p>${esc(j.instalacao)}</p>
+    ${(j.downloads||[]).map((d,n)=>`<a class="btn ${n?"alt":""}" href="${esc(d.url)}" target="_blank" rel="noopener">${n?"Espelho: ":"Baixar: "}${esc(d.nome)}</a>`).join(" ")}`;
+  m.showModal();
+});
+$("#modal").addEventListener("click", e=>{ if(e.target.id==="modal") e.target.close(); });
+$("#busca").addEventListener("input", e=>{ estado.busca=e.target.value; montar(); });
+montar();
+</script>
+</body>
+</html>
