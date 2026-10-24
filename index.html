@@ -27,7 +27,8 @@ nav a:hover{color:var(--text)}
 @media(max-width:720px){.hero-in{flex-direction:column;align-items:flex-start}.hero-logo{width:min(320px,80%)}}
 .hero h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900;font-stretch:75%;max-width:14ch;letter-spacing:-.01em}
 .hero p{color:var(--muted);max-width:52ch;margin:18px 0 0;font-size:1.1rem}
-.tools{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 0}
+.tools{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);padding:14px 0;
+background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(168,85,247,.09) 78px 80px),var(--bg)}
 .tools .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 input[type=search]{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:6px;font:inherit}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -64,9 +65,27 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .versao .meta{margin-top:10px}
 .inst{color:var(--muted);margin:8px 0 0;font-size:.95rem}
 .empty{padding:40px 0;color:var(--muted)}
-.card{transition:transform .2s ease,border-color .2s ease}
-.card:hover{transform:translateY(-4px)}
-.chip,.btn{transition:background-color .2s,border-color .2s,color .2s}
+.card,.chip,.btn,.hero-logo,nav a{transition:transform .25s ease,background-color .25s ease,border-color .25s ease,color .25s ease}
+nav a{display:inline-block}
+.card:hover{transform:scale(1.04);position:relative;z-index:2}
+.chip:hover,.btn:hover{transform:scale(1.07)}
+.hero-logo:hover{transform:scale(1.04)}
+nav a:hover{transform:scale(1.08)}
+.chip:active,.btn:active{transform:scale(.97)}
+
+dialog[open]{animation:abrir .25s ease}
+dialog[open]::backdrop{animation:esmaecer .25s ease}
+@keyframes abrir{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes esmaecer{from{opacity:0}to{opacity:1}}
+
+.grid{transition:opacity .18s ease,transform .18s ease,height .35s ease}
+.grid.animando{overflow:hidden}
+.grid.saindo{opacity:0;transform:translateY(-6px)}
+.grid.entrando{animation:entrada .3s ease}
+@keyframes entrada{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 
 dialog[open]{animation:abrir .22s ease}
 dialog[open]::backdrop{animation:esmaecer .22s ease}
