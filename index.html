@@ -170,9 +170,9 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
 function cor(t){let h=0;for(const c of t)h=(h*31+c.charCodeAt(0))%360;return h}
 function fundo(j){
-  if(j.capa) return `url("${j.capa}")`;
   const h=cor(j.titulo+j.plataforma);
-  return `linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
+  const grad=`linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 14%))`;
+  return j.capa ? `url('${j.capa}'), ${grad}` : grad;
 }
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 
